@@ -14,7 +14,7 @@ header{
 }
 #head{
    text-align: center;
-   font-size: 24px;
+   font-size: 30px;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    font-weight: bold;
 }
@@ -52,6 +52,7 @@ input[type=text] {
  #des{
     text-align: center;
     font-family: cursive;
+    font-size: 20px;
  }
  #updates{
     text-align: center;
@@ -66,5 +67,8 @@ input[type=text] {
    font-family: cursive;
 }
 #field4{
+   font-family: cursive;
+}
+#field5{
    font-family: cursive;
 }

@@ -35,7 +35,7 @@ app.get('/home', (req, res) => {
          error: "Please! provide the country name."
       })
    }
-   covid(req.query.country, (error, { totalCases, totalDeaths, activeCases, totalRecovered } = {}) => {
+   covid(req.query.country, (error, { totalCases, totalDeaths, activeCases, totalRecovered, totalTests } = {}) => {
       if (error) {
          return res.send({
             error
@@ -45,7 +45,8 @@ app.get('/home', (req, res) => {
          totalCases,
          totalDeaths,
          activeCases,
-         totalRecovered
+         totalRecovered,
+         totalTests
       })
    })
 })

@@ -26,7 +26,7 @@ app.use(express.static(publicPath))
 app.get('', (req, res) => {
    res.render('corona', {
       headline: 'Covid-19 Updates',
-      footerMsg: 'Dhurba Baral'
+      footerMsg: 'By Dhurba Baral'
    })
 })
 app.get('/home', (req, res) => {

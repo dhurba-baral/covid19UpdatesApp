@@ -51,8 +51,20 @@ input[type=text] {
  }
  #des{
     text-align: center;
+    font-family: cursive;
  }
  #updates{
     text-align: center;
  }
- 
+ #field1{
+    font-family: cursive;
+ }
+ #field2{
+   font-family: cursive;
+}
+#field3{
+   font-family: cursive;
+}
+#field4{
+   font-family: cursive;
+}

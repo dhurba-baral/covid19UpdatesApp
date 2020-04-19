@@ -19,17 +19,22 @@ const covid = (country, callback) => {
 
          response.on('end', () => {
             const body = JSON.parse(data)
-            if (!body.country) {
-               callback('Unable to find the location.', undefined)
-            } else {
-               callback(undefined, {
-                  totalCases: body.latest_stat_by_country[0].total_cases,
-                  totalDeaths: body.latest_stat_by_country[0].total_deaths,
-                  activeCases: body.latest_stat_by_country[0].active_cases,
-                  totalRecovered: body.latest_stat_by_country[0].total_recovered,
-                  //aper1m=body.latest_stat_by_country[0].total_cases_per1m
-               })
+            try {
+               if (!body.country) {
+                  callback('Unable to find the location.', undefined)
+               } else {
+                  callback(undefined, {
+                     totalCases: body.latest_stat_by_country[0].total_cases,
+                     totalDeaths: body.latest_stat_by_country[0].total_deaths,
+                     activeCases: body.latest_stat_by_country[0].active_cases,
+                     totalRecovered: body.latest_stat_by_country[0].total_recovered,
+                     //aper1m=body.latest_stat_by_country[0].total_cases_per1m
+                  })
+               }
+            } catch (e) {
+               callback('No response!' + e, undefined)
             }
+
          })
          //console.log(body.latest_stat_by_country[0].total_cases)
 

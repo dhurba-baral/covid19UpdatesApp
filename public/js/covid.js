@@ -17,10 +17,10 @@ document.querySelector('form').addEventListener('submit', (e) => {
          if (data.error) {
             msg1.textContent = data.error
          } else {
-            msg1.textContent = 'Total Cases:' + data.totalCases
-            msg2.textContent = 'Total Deaths:' + data.totalDeaths
+            msg1.textContent = 'Total Cases       :' + data.totalCases
+            msg2.textContent = 'Total Deaths      :' + data.totalDeaths
             msg3.textContent = 'Total Active Cases:' + data.activeCases
-            msg4.textContent = 'Total Recovered:' + data.totalRecovered
+            msg4.textContent = 'Total Recovered   :' + data.totalRecovered
 
          }
       })

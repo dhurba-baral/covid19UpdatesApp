@@ -29,3 +29,13 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
    })
 })
+const msg6 = document.querySelector('#field6')
+const msg7 = document.querySelector('#field7')
+const msg8 = document.querySelector('#field8')
+fetch('/world').then((response) => {
+   response.json().then((data) => {
+      msg6.textContent = 'Total Cases       :' + data.worldCases
+      msg7.textContent = 'Total Deaths      :' + data.worldDeaths
+      msg8.textContent = 'Total Recovered   :' + data.worldRecovered
+   })
+})

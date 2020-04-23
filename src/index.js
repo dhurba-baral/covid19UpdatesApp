@@ -1,7 +1,8 @@
 const express = require('express')
 const hbs = require('hbs')
 const path = require('path')
-const covid = require('../src/utilis/covid')
+const covid = require('./utilis/covid')
+const worldData = require('./utilis/worldData')
 
 
 const app = express()
@@ -47,6 +48,21 @@ app.get('/home', (req, res) => {
          activeCases,
          totalRecovered,
          totalTests
+      })
+   })
+})
+
+app.get('/world', (req, res) => {
+   worldData((error, { worldCases, worldDeaths, worldRecovered } = {}) => {
+      if (error) {
+         return res.send({
+            error
+         })
+      }
+      res.send({
+         worldCases,
+         worldDeaths,
+         worldRecovered
       })
    })
 })

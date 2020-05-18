@@ -20,16 +20,21 @@
          <input type="text" placeholder="Country">
          <input type="submit" value="Search">
       </form>
-      <div id="updates">
-         <p id="field1"></p>
-         <p id="field2"></p>
-         <p id="field3"></p>
-         <p id="field4"></p>
-         <p id="field5"></p>
+      <div id="buttonContainer">
+         <button id="locationButton">Get Update of Your Location</button>
       </div>
+   </div>
+   <div id="updates">
+      <p id="field1"></p>
+      <p id="field2"></p>
+      <p id="field3"></p>
+      <p id="field4"></p>
+      <p id="field5"></p>
+   </div>
    </div>
    {{>footer}}
 
+   <script src="/socket.io/socket.io.js"></script>
    <script src="/js/covid.js"></script>
 </body>
 

@@ -1,12 +1,20 @@
 const express = require('express')
 const hbs = require('hbs')
 const path = require('path')
+const http = require('http')
+const socketio = require('socket.io')
+
 const covid = require('./utilis/covid')
 const worldData = require('./utilis/worldData')
+const getCountry = require('./utilis/locationUpdate')
+
 
 
 const app = express()
-const port = process.env.PORT || 3000
+const server = http.createServer(app)
+const io = socketio(server)
+
+const port = process.env.PORT || 3001
 
 //to load path of partials,views and static directory
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -66,7 +74,34 @@ app.get('/world', (req, res) => {
       })
    })
 })
+io.on('connection', (socket) => {
+   socket.on('sendLocation', (position) => {
+      app.get('/location', (req, res) => {
+         getCountry(position.latitude, position.longitude, (error, { yourLocation } = {}) => {
+            if (error) {
+               return res.send({
+                  error
+               })
+            }
+            covid(yourLocation, (error, { totalCases, totalDeaths, activeCases, totalRecovered, totalTests } = {}) => {
+               if (error) {
+                  return res.send({
+                     error
+                  })
+               }
+               res.send({
+                  totalCases,
+                  totalDeaths,
+                  activeCases,
+                  totalRecovered,
+                  totalTests
+               })
+            })
+         })
+      })
+   })
+})
 
-app.listen(port, () => {
+server.listen(port, () => {
    console.log('The server is started in port ' + port)
 })

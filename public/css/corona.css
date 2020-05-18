@@ -41,8 +41,8 @@ input[type=text] {
    box-sizing: border-box;
  }
  input[type=submit] {
-   background-color:rgb(235, 228, 228);
-   color:black;
+   background-color:rgb(59, 59, 230);
+   color:white;
    padding: 14px 20px;
    margin: 8px 0;
    border: none;
@@ -83,4 +83,19 @@ input[type=text] {
 #field8{
    font-family: Georgia, serif;
    text-align: center;
+}
+#buttonContainer{
+   text-align: center;
+}
+#locationButton{
+   background-color:rgb(59, 59, 230);
+   font-family: Arial;
+  border: none;
+  color:white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
 }

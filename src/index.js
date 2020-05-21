@@ -14,7 +14,7 @@ const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT
 
 //to load path of partials,views and static directory
 const partialsPath = path.join(__dirname, '../templates/partials')

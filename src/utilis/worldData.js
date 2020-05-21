@@ -7,7 +7,7 @@ const worldData = (callback) => {
       "path": "/v1/total",
       "headers": {
          "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-         "x-rapidapi-key": "bbe5356ed3msh7e0c3cff3539c30p113b4ajsn3e8bd1e7fe7b"
+         "x-rapidapi-key": process.env.WORLD_API
       }
    };
 

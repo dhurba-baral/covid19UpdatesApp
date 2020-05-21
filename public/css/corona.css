@@ -95,7 +95,6 @@ input[type=text] {
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 14px;
   cursor: pointer;
 }

@@ -8,7 +8,7 @@ const covid = (country, callback) => {
       "path": "/statistics?country=" + country,
       "headers": {
          "x-rapidapi-host": "covid-193.p.rapidapi.com",
-         "x-rapidapi-key": "bbe5356ed3msh7e0c3cff3539c30p113b4ajsn3e8bd1e7fe7b"
+         "x-rapidapi-key": process.env.COUNTRY_API
       }
    };
 

@@ -7,7 +7,7 @@ const getCountry = (lat, long, callback) => {
       "path": "/ReverseGeocode?language=en&location=" + lat + "%252C" + long,
       "headers": {
          "x-rapidapi-host": "trueway-geocoding.p.rapidapi.com",
-         "x-rapidapi-key": "bbe5356ed3msh7e0c3cff3539c30p113b4ajsn3e8bd1e7fe7b",
+         "x-rapidapi-key": process.env.LOCATION_API,
          "useQueryString": true
       }
    };

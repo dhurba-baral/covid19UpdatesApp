@@ -7,7 +7,7 @@ const covid = (country, callback) => {
       "port": null,
       "path": "/statistics?country=" + country,
       "headers": {
-         "x-rapidapi-host": "covid-193.p.rapidapi.com",
+         "x-rapidapi-host": process.env.COUNTRY_API_HOST,
          "x-rapidapi-key": process.env.COUNTRY_API
       }
    };

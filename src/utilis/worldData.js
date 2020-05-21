@@ -6,7 +6,7 @@ const worldData = (callback) => {
       "port": null,
       "path": "/v1/total",
       "headers": {
-         "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+         "x-rapidapi-host": process.env.WORLD_API_HOST,
          "x-rapidapi-key": process.env.WORLD_API
       }
    };

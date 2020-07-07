@@ -44,7 +44,7 @@ app.get('/home', (req, res) => {
          error: "Please! provide the country name."
       })
    }
-   covid(req.query.country, (error, { totalCases, totalDeaths, activeCases, totalRecovered, totalTests } = {}) => {
+   covid(req.query.country, (error, { totalCases, totalDeaths, activeCases, totalRecovered, totalTests, newCases } = {}) => {
       if (error) {
          return res.send({
             error
@@ -55,7 +55,8 @@ app.get('/home', (req, res) => {
          totalDeaths,
          activeCases,
          totalRecovered,
-         totalTests
+         totalTests,
+         newCases
       })
    })
 })
@@ -83,7 +84,7 @@ io.on('connection', (socket) => {
                   error
                })
             }
-            covid(yourLocation, (error, { totalCases, totalDeaths, activeCases, totalRecovered, totalTests } = {}) => {
+            covid(yourLocation, (error, { totalCases, totalDeaths, activeCases, totalRecovered, totalTests, newCases } = {}) => {
                if (error) {
                   return res.send({
                      error
@@ -94,7 +95,8 @@ io.on('connection', (socket) => {
                   totalDeaths,
                   activeCases,
                   totalRecovered,
-                  totalTests
+                  totalTests,
+                  newCases
                })
             })
          })

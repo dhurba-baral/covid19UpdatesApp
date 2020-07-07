@@ -30,7 +30,8 @@ const covid = (country, callback) => {
                   totalDeaths: body.response[0].deaths.total,
                   activeCases: body.response[0].cases.active,
                   totalRecovered: body.response[0].cases.recovered,
-                  totalTests: body.response[0].tests.total
+                  totalTests: body.response[0].tests.total,
+                  newCases: body.response[0].cases.new,
                })
             }
          } catch (e) {

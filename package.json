@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.20"
   },
   "scripts": {
     "start": "node src/index.js",
